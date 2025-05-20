@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from goobs.models import Products
+
+@admin.register(Products)
+class ProductAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("name", )}
+    

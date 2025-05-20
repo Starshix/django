@@ -9,108 +9,28 @@
         
         </div>
         <div class="container">
-            <div class="card">
-                <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="logo">
+
+            {% for product in goobs%}
+                <div class="card">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="logo">
+                    {% endif %}
                 <div class="card-body">
                     <a href="{% url "goobs:product" %}">
-                        <p class="card-title">Чашечка бодрящего кофе</span></p>
+                        <p class="card-title">{{ product.name }}</span></p>
                     </a>
-                    <p class="card-text">+10 к силе и мотивации</p>
+                    <p class="card-text">{{ product.description }}</p>
                     <p class="product_id">id: 02265</p>
                     <div class="d-flex justify-content-between">
                         <p><s>100</s> $</p>
-                        <p><strong>90.00 $</strong></p>
+                        <p><strong>{{ product.price }}</strong></p>
                         <span class="badge bg-warning text-dark">
                             <strong>Скидка 10.00 %</strong>
                         </span>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="logo">
-                <div class="card-body">
-                    <a href="{% url "goobs:product" %}">
-                        <p class="card-title">Чашечка бодрящего кофе</span></p>
-                    </a>
-                    <p class="card-text">+10 к силе и мотивации</p>
-                    <p class="product_id">id: 02265</p>
-                    <div class="d-flex justify-content-between">
-                        <p><s>100</s> $</p>
-                        <p><strong>90.00 $</strong></p>
-                        <span class="badge bg-warning text-dark">
-                            <strong>Скидка 10.00 %</strong>
-                        </span>
-                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="logo">
-                <div class="card-body">
-                    <a href="{% url "goobs:product" %}">
-                        <p class="card-title">Чашечка бодрящего кофе</span></p>
-                    </a>
-                    <p class="card-text">+10 к силе и мотивации</p>
-                    <p class="product_id">id: 02265</p>
-                    <div class="d-flex justify-content-between">
-                        <p><s>100</s> $</p>
-                        <p><strong>90.00 $</strong></p>
-                        <span class="badge bg-warning text-dark">
-                            <strong>Скидка 10.00 %</strong>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="logo">
-                <div class="card-body">
-                    <a href="{% url "goobs:product" %}">
-                        <p class="card-title">Чашечка бодрящего кофе</span></p>
-                    </a>
-                    <p class="card-text">+10 к силе и мотивации</p>
-                    <p class="product_id">id: 02265</p>
-                    <div class="d-flex justify-content-between">
-                        <p><s>100</s> $</p>
-                        <p><strong>90.00 $</strong></p>
-                        <span class="badge bg-warning text-dark">
-                            <strong>Скидка 10.00 %</strong>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="logo">
-                <div class="card-body">
-                    <a href="{% url "goobs:product" %}">
-                        <p class="card-title">Чашечка бодрящего кофе</span></p>
-                    </a>
-                    <p class="card-text">+10 к силе и мотивации</p>
-                    <p class="product_id">id: 02265</p>
-                    <div class="d-flex justify-content-between">
-                        <p><s>100</s> $</p>
-                        <p><strong>90.00 $</strong></p>
-                        <span class="badge bg-warning text-dark">
-                            <strong>Скидка 10.00 %</strong>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{% static 'main/img/logo.jpg' %}" class="card-img-top" alt="logo">
-                <div class="card-body">
-                    <a href="{% url "goobs:product" %}">
-                        <p class="card-title">Чашечка бодрящего кофе</span></p>
-                    </a>
-                    <p class="card-text">+10 к силе и мотивации</p>
-                    <p class="product_id">id: 02265</p>
-                    <div class="d-flex justify-content-between">
-                        <p><s>100</s> $</p>
-                        <p><strong>90.00 $</strong></p>
-                        <span class="badge bg-warning text-dark">
-                            <strong>Скидка 10.00 %</strong>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
             
         </div>
     </div>

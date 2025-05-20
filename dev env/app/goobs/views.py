@@ -1,9 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+from goobs.models import Products
 
 def catalog(request):
-    return render(request, "goobs/catalog.html")
+    
+    goobs = Products.objects.all()
+
+    context = {
+        "title": "Home - Каталог",
+        "goobs": goobs,
+    }
+    return render(request, "goobs/catalog.html", context)
 
 def product(request):
     return render(request, "goobs/product.html")
+
