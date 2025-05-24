@@ -16,17 +16,20 @@
                     <img src="{{ product.image.url }}" class="card-img-top" alt="logo">
                     {% endif %}
                 <div class="card-body">
-                    <a href="{% url "goobs:product" %}">
+                    <a href="{% url "catalog:product" product.slug %}">
                         <p class="card-title">{{ product.name }}</span></p>
                     </a>
                     <p class="card-text">{{ product.description }}</p>
-                    <p class="product_id">id: 02265</p>
                     <div class="d-flex justify-content-between">
-                        <p><s>100</s> $</p>
-                        <p><strong>{{ product.price }}</strong></p>
+                        {% if product.discount %}
+                        <p><s>{{product.price}}</s> $</p>
+                        <p><strong>{{ product.sell_price }}</strong></p>
                         <span class="badge bg-warning text-dark">
-                            <strong>Скидка 10.00 %</strong>
+                            <strong>Скидка {{product.discount}} %</strong>
                         </span>
+                        {% else %}
+                            <p><strong>{{ product.price }}</strong></p>
+                        {% endif %}
                     </div>
                 </div>
                 </div>

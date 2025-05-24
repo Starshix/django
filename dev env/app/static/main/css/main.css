@@ -32,23 +32,58 @@ body {
     padding: 1em;
     margin: 1em;
     margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-prod{
-    width: 990px;
-    height: 650px;
+    height: 500px;
+    width: 460px;
     background-color: #FFFFFF;
     border: 5px solid black;
     padding: 1em;
     margin: 1em;
     margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-body{
+    width: 400px;
+    height: 200px;
+}
+.card-body .d-flex{
+    width: 300px;
+}
+.body_2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 0;
+}
+.body_price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0 10px;
+}
+.body_price p{
+    margin: 0;
 }
 
+.body_price span{
+    margin: 0;
+}
+.body_2 a{
+    width: 300px;
+}
 .card-img-top{
     width: 300px;
     margin-left: auto;
     margin-right: auto;
-    height: 300px;
+    height: 200px;
     border-style: groove;
     border-width: 4px;
     border-color: black;
@@ -65,9 +100,6 @@ body {
 .bron a{
         margin: auto;
         width: 500px;
-}
-span{
-    margin: 10px;
 }
 .badge{
     margin-bottom: 2.5px;
